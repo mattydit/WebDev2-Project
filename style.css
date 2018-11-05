@@ -79,3 +79,11 @@ body{
   	color: white;
   	text-align: center;
   }
+  .featured{
+    border: 1px solid black;
+    border-radius: 4px;
+  }
+  .panel-body{
+    display: block;
+    margin: auto;
+  }
