@@ -2,38 +2,88 @@
 <html>
 <head>
 	<title>Yurt</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 	<link rel="stylesheet" href="style.css">
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
   	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 	<meta charset="utf-8">
 </head>
 <body>
-	<div class="topnav">
-		<a class="active" href="#reviews">Reviews</a>
-		<a href="#restaurants">Restaurants</a>
-		<a href="#about">About</a>
-		<div class="search-container">
-			<form action="/action_page.php">
-				<input type="text" name="search" placeholder="Search Restaurants...">
-				<button type="submit" class="btn">Search</button>
-			</form>
-		</div>
-	</div>
+	<div class="navbar navbar-inverse">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="#">Yurt Reviews</a>
+            </div>
+            <ul class="nav navbar-nav">
+                <li class="active"><a href="#">Home</a></li>
+                <li><a href="#">Page 1</a></li>
+                <li><a href="#">Page 2</a></li>
+                <li><a href="#">Page 3</a></li>
+            </ul>
+        </div>
+    </div>
 	<div class="main">
 		
 	</div>
-	<div class="container">
-		<h2>Featured Restaurants</h2>
-		<div class="panel panel-default">
-			<div class="panel-body">
-				<img src="images/img.jpeg" width="24%">
-				<img src="images/img2.jpg" width="24%">
-				<img src="images/img3.jpg" width="24%">
-				<img src="images/img4.png" width="24%">
+    
+    <div class="container">
+        <h2>Featured Restaurants</h2>
+    <div class="panel panel-default">
+        <div class="panel-body">
+        <!-- https://bootsnipp.com/snippets/featured/responsive-moving-box-carousel -youngfella -->
+	<div class="carousel slide" id="featuredSlides">
+		
+		<div class="carousel-inner">
+			<div class="item active">
+                <ul class="thumbnails">
+                    <li class="col-sm-3">
+                    <div class="fff">
+                        <div class="thumbnail">
+                            <a href="#"><img src="images/img.jpeg"></a>    
+                        </div>
+                        <div class="caption">
+                            asdf
+                        </div>
+                    </div>
+                    </li>
+                    <li class="col-sm-3">
+                    <div class="fff">
+                        <div class="thumbnail">
+                            <a href="#"><img src="images/img2.jpg"></a>    
+                        </div>
+                        <div class="caption">
+                            asdf
+                        </div>
+                    </div>
+                    </li>
+                    <li class="col-sm-3">
+                    <div class="fff">
+                        <div class="thumbnail">
+                            <a href="#"><img src="images/img3.jpg"></a>    
+                        </div>
+                        <div class="caption">
+                            asdf
+                        </div>
+                    </div>
+                    </li>
+                    <li class="col-sm-3">
+                    <div class="fff">
+                        <div class="thumbnail">
+                            <a href="#"><img src="images/img4.PNG"></a>    
+                        </div>
+                        <div class="caption">
+                            asdf
+                        </div>
+                    </div>
+                    </li>
+                </ul>
+				
 			</div>
 		</div>
 	</div>
+        </div>
+    </div>
+    </div>
 	<div class="container">
 		<h2>Recent Reviews</h2>
 		<div class="panel panel-default">
