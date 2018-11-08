@@ -26,13 +26,28 @@ body{
 
 .container-fluid 
 {
-    background-color: #253237;
+
 }
-
-
 
 .navbar-brand 
 {
     background-color: #e0fbfc;
     color: #253237;
+}
+footer{
+  background-color: #555;
+  color: white;
+  padding: 100px;
+}
+.sidenav{
+  padding-top: 30px;
+  background-color: #f1f1f1;
+  height: 100%;
+}
+.row.content{
+  height: 550px;
+}
+.navbar{
+  margin-bottom: 0;
+  border-radius: 0;
 }
