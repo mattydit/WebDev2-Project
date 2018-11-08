@@ -2,7 +2,7 @@
 <html>
 <head>
 	<title>Write Review</title>
-	   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 	<link rel="stylesheet" href="style.css">
   	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
@@ -10,12 +10,15 @@
 </head>
 <body>
 	<div class="container">
+			<div class="md-form">
+	    	<label for="restaurant">Restaurant Name</label>
+	    	<input type="text" id="restaurant" class="form-control">
+	    </div>
 		<div class="md-form">
-			<label for="form7">Material textarea</label>
+			<label for="form7">Review</label>
 	    	<textarea type="text" id="form7" class="md-textarea form-control" rows="3"></textarea>
 	    </div>
-	    <div class="md-form">
-	    	<input type="text" id="restaurant">
+	    <button type="button" class="btn btn-primary">Post</button>
 	</div>
 </body>
 </html>
