@@ -9,26 +9,15 @@
 	<meta charset="utf-8">
 </head>
 <body>
-<!-- 	<div class="container">
-			<div class="md-form">
-	    	<label for="restaurant">Restaurant Name</label>
-	    	<input type="text" id="restaurant" class="form-control">
-	    </div>
-		<div class="md-form">
-			<label for="form7">Review</label>
-	    	<textarea type="text" id="form7" class="md-textarea form-control" rows="3"></textarea>
-	    </div>
-	    <button type="button" class="btn btn-primary">Post</button>
-	</div>
-	<div class="col-sm-2 sidenav">
-		<div class="well">
-			<p>yurt</p>
-		</div>
-	</div>
-	<footer class="container-fluid text-center">
-	</footer> -->
 
 	<div class="container-fluid text-center">
+		<nav class="navbar navbar-light bg-light justify-content-between">
+			<form class="form-inline">
+				<a class="navbar-brand">Home</a>
+				<input type="search" class="form-control mr-ms-2" placeholder="Search" ariel-label="Search">
+				<button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+	</form>
+</nav>
 		<div class="row content">
 			<div class="col-sm-2 sidenav">
 			</div>
@@ -43,7 +32,11 @@
 						<label for="form7">Review</label>
 	    				<textarea type="text" id="form7" class="md-textarea form-control" rows="3"></textarea>
 	    			</div>
+	    			<input type="file" name="file">
 	    			<button type="button" class="btn btn-primary">Post</button>
+	    			<form action="index.html">
+	    				<input type="submit" value="Cancel">
+	    			</form>
 	    		</div>
 			</div>
 			<div class="col-sm-2 sidenav">
