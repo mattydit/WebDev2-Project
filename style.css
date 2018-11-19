@@ -1,11 +1,16 @@
-body{
-  font-family: 'Roboto', sans-serif;
+body
+{
+    font-family: 'Roboto', sans-serif;
+    background-color: #e0fbfc;
 }
 
-  .content-container > a{
+.content-container > a
+{
   	color: #F8FFF4;
-  }
-  .footer{
+}
+
+.footer
+{
   	position: fixed;
   	left: 0;
   	bottom: 0;
@@ -13,15 +18,19 @@ body{
   	background-color: #474350;
   	color: white;
   	text-align: center;
-  }
-  .featured{
+}
+
+.featured
+{
     border: 1px solid black;
     border-radius: 4px;
-  }
-  .panel-body{
+}
+
+.panel-body
+{
     display: block;
     margin: auto;
-  }
+}
 
 
 .container-fluid 
@@ -34,63 +43,125 @@ body{
     background-color: #e0fbfc;
     color: #253237;
 }*/
-footer{
-  background-color: #555;
-  color: white;
-  padding: 100px;
+
+footer
+{
+    background-color: #555;
+    color: white;
+    padding: 100px;
 }
-.sidenav{
-  padding-top: 30px;
-  background-color: #f1f1f1;
-  height: 150%;
+
+.sidenav
+{
+    padding-top: 30px;
+    background-color: #f1f1f1;
+    height: 150%;
 }
-.row.content{
-  height: 550px;
+
+.row.content
+{
+    height: 550px;
 }
-.navbar{
-  margin-bottom: 0;
-  border-radius: 0;
+
+.navbar
+{
+    margin-bottom: 0;
+    border-radius: 0;
 }
-.login{
-  width: 15%;
-  margin: auto;
+.login
+{
+    width: 15%;
+    margin: auto;
 }
-.login .form-control {
-  background: #f7f7f7 none repeat scroll 0 0;
-  border: 1px solid #d4d4d4;
-  font-size: 14px;
-  height: 50px;
-  line-height: 50px;
-  border-radius: 10px 10px 10px 10px;
+
+.login .form-control 
+{
+    background: #f7f7f7 none repeat scroll 0 0;
+    border: 1px solid #d4d4d4;
+    font-size: 14px;
+    height: 50px;
+    line-height: 50px;
+    border-radius: 10px 10px 10px 10px;
 }
-.login >h2{
-  width: 50%;
-  margin: auto;
-  color: black;
-  text-align: center;
-  padding-bottom: 10px;
-  font-family: sans-serif;
+
+.login >h2
+{
+    width: 50%;
+    margin: auto;
+    color: black;
+    text-align: center;
+    padding-bottom: 10px;
+    font-family: sans-serif;
 }
-.login .form-group{
-  margin-bottom: 10px;
+
+.login .form-group
+{
+    margin-bottom: 10px;
 }
-.login .btn.btn-primary{
-  margin-top: 10px;
-  background: #253237 none repeat scroll 0 0;
-  border-color: #253237;
-  color: #ffffff;
-  font-size: 14px;
-  width: 100%;
-  height: 50px;
-  line-height: 50px;
-  border-radius: 10px 10px 10px 10px;
-  padding: 0;
+
+.login .btn.btn-primary
+{
+    margin-top: 10px;
+    background: #253237 none repeat scroll 0 0;
+    border-color: #253237;
+    color: #ffffff;
+    font-size: 14px;
+    width: 100%;
+    height: 50px;
+    line-height: 50px;
+    border-radius: 10px 10px 10px 10px;
+    padding: 0;
 }
-.login .form-group {
-  margin-bottom:10px;
+
+.login .form-group 
+{
+    margin-bottom:10px;
 }
-.login{
-  text-align: center;
+
+.login
+{
+    text-align: center;
 }
-.test{
+
+#search-box 
+{
+    padding-bottom: 40px;
 }
+
+#search-box input[type=text]
+{
+    border: none;
+    font-size: 17px;
+    border: 1px solid #ccc;
+    width: 85%;
+    height: 35px;
+}
+
+#search-box button
+{
+    float: right;
+    width: 15%;
+    height: 35px;
+    background-color: #e0fbfc;
+    color: #253237;
+}
+
+
+.navbar-inverse 
+{
+    background-color: #253237;
+}
+
+
+.panel-default 
+{
+    background-color: #c2dfe3;
+    color: #253237;
+}
+
+
+.text-center 
+{
+    background-color: #253237;
+}
+
