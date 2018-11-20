@@ -14,7 +14,7 @@ body
   	position: fixed;
   	left: 0;
   	bottom: 0;
-  	width: 100%
+  	width: 100%;
   	background-color: #474350;
   	color: white;
   	text-align: center;
@@ -35,7 +35,6 @@ body
 
 .container-fluid 
 {
-
 }
 
 /*.navbar-brand 
@@ -165,3 +164,29 @@ footer
     background-color: #253237;
 }
 
+
+
+
+.page-footer {
+    position: fixed;
+    left: 0;
+    right: 0;
+    
+}
+
+
+#registerbtn 
+{
+    width: 100%;
+    padding: 14px 20px;
+    background-color: #4c575b;
+    border: none;
+    color: white;
+    font-size: 18px;
+    border-radius: 4px;
+}
+
+#registerbtn:hover
+{
+    background-color: #5c6b73;
+}
