@@ -27,6 +27,16 @@ if (isset($_POST['acc_submit']))
     }
     else
     {
+        $password = $_POST[password];
+        $password = password_hash($password, PASSWORD_DEFAULT);
         
+        //Register the account
+        $sql = "INSERT INTO account (firstname, surname, email, password)
+        VALUES ('$_POST[firstname]', '$_POST[surname]', '$_POST[email]', '$password')";
+        
+        if (!mysqli_query($db, $sql))
+        {
+            die('Error: '. mysqli_error());
+        }
     }
 }
