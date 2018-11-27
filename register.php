@@ -1,3 +1,5 @@
+<?php include 'server.php'; ?>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -34,7 +36,7 @@
         <h2>Create an Account</h2>
     <div class="panel panel-default">
         <div class="panel-body" style="background-color: #f6f8f9;">
-            <form method="post">
+            <form method="post" action="register.php">
                 <div class="input-group">
                     <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
                     <input id="firstname" type="text" class="form-control" name="firstname" placeholder="First Name">
