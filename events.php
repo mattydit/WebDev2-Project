@@ -7,6 +7,7 @@
   	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 	<meta charset="utf-8">
+	<link rel="icon" href="images/icon.jpg">
 </head>
 <body>
 	<div class="navbar navbar-inverse">

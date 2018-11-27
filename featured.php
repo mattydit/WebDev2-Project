@@ -1,20 +1,22 @@
-<!-- <?php include('server.php') ?> -->
-
+<?php
+    include('server.php');
+?>
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Login</title>
+	<title>Featured Restaurants</title>
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 	<link rel="stylesheet" href="style.css">
   	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 	<meta charset="utf-8">
+    <link rel="icon" href="images/icon.jpg">
 </head>
 <body>
 	<div class="navbar navbar-inverse">
        <div class="container-fluid">
             <div class="navbar-header">
-                <a class="navbar-brand" href="#">Review Portal</a>
+                <a class="navbar-brand" href="#">Yurt Reviews</a>
             </div>
             <ul class="nav navbar-nav">
                 <li><a href="index.html">Home</a></li>
@@ -26,20 +28,6 @@
                 <li class="active"><a href="login.html">Login</a></li>
             </ul>
         </div>
-    </div>
-
-	<div class="login">
-		<h2>Login</h2>
-		<form method="post">
-			<div class="form-group">
-				<input type="email" class="form-control" id="email" placeholder="Email" required>
-			</div>
-			<div class="form-group">
-				<input type="password" class="form-control" id="password" placeholder="Password" required>
-			<button type="submit" class="btn btn-primary">Login</button>
-		</form>
-	</div>
-</form>
-</div>
+    </div>	
 </body>
 </html>

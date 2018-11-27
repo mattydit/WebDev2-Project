@@ -10,6 +10,7 @@
   	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 	<meta charset="utf-8">
+    <link rel="icon" href="images/icon.jpg">
 </head>
 <body>
 	<div class="navbar navbar-inverse">
@@ -21,14 +22,14 @@
             </div>
             <ul class="nav navbar-nav">
                 <li class="active"><a href="#">Home</a></li>
-                <li><a href="review.html">Reviews</a></li>
-                <li><a href="featured.html">Featured</a></li>
-                <li><a href="events.html">Events</a></li>
+                <li><a href="review.php">Reviews</a></li>
+                <li><a href="featured.php">Featured</a></li>
+                <li><a href="events.php">Events</a></li>
             </ul>
             <ul class="nav navbar-nav navbar-right">
                 <?php if(!isset($_SESSION["email"])) : ?>
-                    <li><a href="register.html"><span class="glyphicon glyphicon-user"></span> Sign up</a></li>
-                    <li><a href="login.html"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+                    <li><a href="register.php"><span class="glyphicon glyphicon-user"></span> Sign up</a></li>
+                    <li><a href="login.php"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
                 <?php else : ?>
                     <li><a href="logout.php"><span class="glyphicon glyphicon-log-out"></span> Logout</a></li>
                 <?php endif ?>

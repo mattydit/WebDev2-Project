@@ -56,7 +56,8 @@ if(isset($_POST['rev']))
 {
     $rname = $_POST['rname'];
     $review = $_POST['review'];
-    $rating = $_POST['rating'];
+    $rating = $_POST['optradio'];
 
     $query = "INSERT INTO review VALUES ('$rname','$review','$rating')";
+    mysqli_query($db,$query);
 }

@@ -1,56 +1,78 @@
-<?php session_start(); ?>
+<?php
+	include 'server.php';
+	if(!isset($_SESSION["email"])){
+		header('location: review.php');
+	}
+?>
+
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Write Review</title>
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<title>Review Portal</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 	<link rel="stylesheet" href="style.css">
   	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 	<meta charset="utf-8">
+    <link rel="icon" href="images/icon.jpg">
 </head>
 <body>
-		<div class="navbar navbar-inverse">
+	<div class="navbar navbar-inverse">
         <div class="container-fluid">
             <div class="navbar-header">
-                <a class="navbar-brand" href="#">Yurt Reviews</a>
+                <a class="navbar-brand" href="#">Reviews Portal</a>
             </div>
             <ul class="nav navbar-nav">
-                <li><a href="index.html">Home</a></li>
-                <li class="active"><a href="review.html">Reviews</a></li>
-                <li><a href="featured.html">Featured</a></li>
-                <li><a href="events.html">Events</a></li>
+                <li class="active"><a href="index.php">Home</a></li>
+                <li><a href="review.php">Reviews</a></li>
+                <li><a href="featured.php">Featured</a></li>
+                <li><a href="events.php">Events</a></li>
             </ul>
             <ul class="nav navbar-nav navbar-right">
-                <li><a href="login.html">Login</a></li>
+                <li><a href="register.php"><span class="glyphicon glyphicon-user"></span> Sign up</a></li>
+                <li><a href="login.php"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
             </ul>
         </div>
     </div>
-    
-		<div class="row content">
-			<div class="col-sm-2 sidenav">
-			</div>
-			<!-- center grid -->
-			<div class="col-sm-8 text-left">
-				<div class="md-form">
-					<label for="restaurant">Restaurant Name</label>
-					<input type="text" id="restaurant" class="form-control">
-				</div>
-				<div class="md-form">
-					<div class="md-form">
-						<label for="form7">Review</label>
-	    				<textarea type="text" id="form7" class="md-textarea form-control" rows="3" name="review"></textarea>
-	    			</div>
-	    			<input type="file" name="file">
-	    			<input type="submit" name="rev" value="Post">
-	    			<form action="index.html">
-	    				<input type="submit" value="Cancel">
-	    			</form>
-	    		</div>
-			</div>
-			<div class="col-sm-2 sidenav">
-			</div>
-		</div>
+	<div class="main">
+		
 	</div>
+    <br><br>
+    <div class="container">
+        <h2>Write a review</h2>
+    <div class="panel panel-default">
+        <div class="panel-body" style="background-color: #f6f8f9;">
+            <form method="post" action="review.php">
+                <div class="input-group">
+                    <span class="input-group-addon"><i class="glyphicon glyphicon-grain"></i></span>
+                    <input id="rname" type="text" class="form-control" name="rname" placeholder="Restaurant name">
+                </div>
+                <br>
+                <br>
+                <div class="input-group">
+                    <span class="input-group-addon"><i class="glyphicon glyphicon-align-left"></i></span>
+                    <textarea type="text" id="form7" class="md-textarea form-control" rows="3" name="review"></textarea>
+                </div>
+                <br>
+                <div class="input-group">
+                    <label class="radio-inline"><input type="radio" name="optradio">Like</label>
+                    <label class="radio-inline"><input type="radio" name="optradio">Okay</label>
+                    <label class="radio-inline"><input type="radio" name="optradio">Dislike</label>
+                </div>
+                <br>
+                	<input type="file" name="file">
+                    <br>
+	    			<input type="submit" name="rev" value="Post" class="btn">
+	    			<form action="index.php">
+	    			<input type="submit" value="Cancel" class="btn" style="margin-left: 20px;">
+            </form>
+        </div>
+    </div>
+    </div>
+    
+    <br><br><br><br><br><br><br><br><br>
+    <footer class="container-fluid text-center">
+        <p>lorem</p>
+    </footer>
 </body>
 </html>
