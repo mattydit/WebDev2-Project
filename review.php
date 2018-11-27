@@ -39,7 +39,7 @@
 				<div class="md-form">
 					<div class="md-form">
 						<label for="form7">Review</label>
-	    				<textarea type="text" id="form7" class="md-textarea form-control" rows="3"></textarea>
+	    				<textarea type="text" id="form7" class="md-textarea form-control" rows="3" name="review"></textarea>
 	    			</div>
 	    			<input type="file" name="file">
 	    			<input type="submit" name="rev" value="Post">

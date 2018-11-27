@@ -10,7 +10,13 @@ $email = "";
 $password = "";
 
 //connect to the DB
-$db = mysqli_connect("localhost", "root", "", "reviewdb");
+
+$servername = "localhost";
+$username = "root";
+$password = "";
+$databasename = "account";
+
+$db = mysqli_connect($servername,$username,$password,$databasename);
 
 if (mysqli_connect_errno())
 {
@@ -18,7 +24,7 @@ if (mysqli_connect_errno())
 
 }
 
-//Regostration
+//Registration
 if (isset($_POST['acc_submit']))
 {
     if($_POST[password] != $_POST[password_confirm])
@@ -39,4 +45,15 @@ if (isset($_POST['acc_submit']))
             die('Error: '. mysqli_error());
         }
     }
+}
+
+//
+ifA(isset($_POST['rev']))
+{
+    $reviewer = $_POST['']
+    $rname = $_POST['rname'];
+    $review = $_POST['review'];
+    $rating = $_POST['rating'];
+
+    $query = "INSERT INTO review VALUES ('$rname'.'$review','$rating')";
 }
