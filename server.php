@@ -14,7 +14,7 @@ $password = "";
 $servername = "localhost";
 $username = "root";
 $password = "";
-$databasename = "account";
+$databasename = "reviewdb";
 
 $db = mysqli_connect($servername,$username,$password,$databasename);
 
@@ -27,6 +27,11 @@ if (mysqli_connect_errno())
 //Registration
 if (isset($_POST['acc_submit']))
 {
+    $firstname = $_POST['firstname'];
+    $surname = $_POST['surname'];
+    $email = $_POST['email'];
+    $password = $_POST['password'];
+
     if($_POST[password] != $_POST[password_confirm])
     {
         echo "The passwords do not match";
@@ -37,23 +42,21 @@ if (isset($_POST['acc_submit']))
         $password = password_hash($password, PASSWORD_DEFAULT);
         
         //Register the account
-        $sql = "INSERT INTO account (firstname, surname, email, password)
-        VALUES ('$_POST[firstname]', '$_POST[surname]', '$_POST[email]', '$password')";
+        $query = "INSERT INTO account VALUES ('$firstname', '$surname', '$email', '$password')";
+        mysqli_query($db,$query);
         
-        if (!mysqli_query($db, $sql))
-        {
-            die('Error: '. mysqli_error());
-        }
+        $_SESSION['email'] = $email;
+        $_SESSION['success'] = "You are now logged in";
+        header('location: index.html');
     }
 }
 
 //
-ifA(isset($_POST['rev']))
+if(isset($_POST['rev']))
 {
-    $reviewer = $_POST['']
     $rname = $_POST['rname'];
     $review = $_POST['review'];
     $rating = $_POST['rating'];
 
-    $query = "INSERT INTO review VALUES ('$rname'.'$review','$rating')";
+    $query = "INSERT INTO review VALUES ('$rname','$review','$rating')";
 }
