@@ -40,11 +40,11 @@ if (isset($_POST['acc_submit']))
     {
         $password = $_POST[password];
         $password = password_hash($password, PASSWORD_DEFAULT);
-        
+
         //Register the account
         $query = "INSERT INTO account VALUES ('$firstname', '$surname', '$email', '$password')";
         mysqli_query($db,$query);
-        
+
         $_SESSION['email'] = $email;
         $_SESSION['success'] = "You are now logged in";
         header('location: index.html');
