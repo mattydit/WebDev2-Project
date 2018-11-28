@@ -1,10 +1,7 @@
 <?php
 	include 'server.php';
-	if(!isset($_SESSION["email"])){
-		header('location: review.php');
-	}
+	
 ?>
-
 <!DOCTYPE html>
 <html>
 <head>
@@ -23,8 +20,8 @@
                 <a class="navbar-brand" href="#">Reviews Portal</a>
             </div>
             <ul class="nav navbar-nav">
-                <li class="active"><a href="index.php">Home</a></li>
-                <li><a href="review.php">Reviews</a></li>
+                <li><a href="index.php">Home</a></li>
+                <li class="active"><a href="review.php">Reviews</a></li>
                 <li><a href="featured.php">Featured</a></li>
                 <li><a href="events.php">Events</a></li>
             </ul>
@@ -61,6 +58,7 @@
                 </div>
                 <br>
                 	<input type="file" name="file">
+                    <input type="submit" name="submitImage">
                     <br>
 	    			<input type="submit" name="rev" value="Post" class="btn">
 	    			<form action="index.php">

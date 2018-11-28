@@ -47,7 +47,7 @@ if (isset($_POST['acc_submit']))
 
         $_SESSION['email'] = $email;
         $_SESSION['success'] = "You are now logged in";
-        header('location: index.html');
+        header('location: index.php');
     }
 }
 
@@ -58,6 +58,6 @@ if(isset($_POST['rev']))
     $review = $_POST['review'];
     $rating = $_POST['optradio'];
 
-    $query = "INSERT INTO review VALUES ('$rname','$review','$rating')";
+    $query = "INSERT INTO review VALUES ($rname','$review','$rating')";
     mysqli_query($db,$query);
 }

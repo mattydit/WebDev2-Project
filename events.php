@@ -16,13 +16,13 @@
                 <a class="navbar-brand" href="#">Yurt Reviews</a>
             </div>
             <ul class="nav navbar-nav">
-                <li><a href="index.html">Home</a></li>
-                <li><a href="review.html">Reviews</a></li>
-                <li><a href="featured.html">Featured</a></li>
-                <li><a href="events.html">Events</a></li>
+                <li><a href="index.php">Home</a></li>
+                <li><a href="review.php">Reviews</a></li>
+                <li><a href="featured.php">Featured</a></li>
+                <li class="active"><a href="events.php">Events</a></li>
             </ul>
             <ul class="nav navbar-nav navbar-right">
-                <li class="active"><a href="login.html">Login</a></li>
+                <li class="active"><a href="login.php">Login</a></li>
             </ul>
         </div>
     </div>
