@@ -16,7 +16,7 @@
 	<div class="navbar navbar-inverse">
         <div class="container-fluid">
             <div class="navbar-header">
-                <a class="navbar-brand" href="#">
+                <a class="navbar-brand" href="index.php">
                     Reviews Portal
                 </a>
             </div>
@@ -43,7 +43,7 @@
     <div class="container">
         <h2>Featured Restaurants</h2>
     <div class="panel panel-default">
-        <div class="panel-body" style="background-color: #f6f8f9;">
+        <div class="panel-body">
         <!-- https://bootsnipp.com/snippets/featured/responsive-moving-box-carousel -youngfella -->
 	       <div id="SlideShow" class="carousel slide" data-ride="carousel" style="width:  75%; margin: auto;">
                 <ol class="carousel-indicators">
@@ -98,12 +98,12 @@
 	<div class="container">
 		<h2>Recent Reviews</h2>
 		<div class="panel panel-default">
-			<div class="panel-body" style="background-color: #f6f8f9;">Yurt</div>
+			<div class="panel-body">Yurt</div>
 		</div>
 	</div>
 	<div class="container">
 		<h2>News</h2>
-		<div class="panel panel-default" style="background-color: #f6f8f9;">
+		<div class="panel panel-default">
             <div class="panel-body">Ut te transferrem non ubi appellat 
                 adipisicing, multos commodo te 
                 despicationes, et e tamen quibusdam sed 

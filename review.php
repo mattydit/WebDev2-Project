@@ -17,7 +17,7 @@
 	<div class="navbar navbar-inverse">
         <div class="container-fluid">
             <div class="navbar-header">
-                <a class="navbar-brand" href="#">Reviews Portal</a>
+                <a class="navbar-brand" href="index.php">Reviews Portal</a>
             </div>
             <ul class="nav navbar-nav">
                 <li><a href="index.php">Home</a></li>
@@ -38,7 +38,7 @@
     <div class="container">
         <h2>Write a review</h2>
     <div class="panel panel-default">
-        <div class="panel-body" style="background-color: #f6f8f9;">
+        <div class="panel-body">
             <form method="post" action="review.php">
                 <div class="input-group">
                     <span class="input-group-addon"><i class="glyphicon glyphicon-grain"></i></span>

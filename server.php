@@ -51,6 +51,31 @@ if (isset($_POST['acc_submit']))
     }
 }
 
+//Login
+//https://www.tutorialspoint.com/php/php_mysql_login.htm
+if (isset($_POST['acc_login']))
+{
+    $email = mysqli_real_escape_string($_POST['email']);
+    $password = $_POST['password'];
+    
+    //$password = md5($password);
+    
+    $query = "SELECT * FROM account WHERE email='$email' AND password='$password'";
+    $results = mysqli_query($db, $query);
+    
+    if (mysqli_num_rows($results) == 1)
+    {
+        $_SESSION['email'] = $email;
+        $_SESSION['success'] = "You are now logged in";
+        header('location: index.php');
+    }
+    else
+    {
+        array_push($errors, "Wrong email/password");
+    }
+}
+
+
 //
 if(isset($_POST['rev']))
 {

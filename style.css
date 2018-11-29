@@ -1,6 +1,7 @@
 body
 {
     font-family: 'Roboto', sans-serif;
+    background-color: #e0fbfc;
 }
 
 .content-container > a
@@ -153,7 +154,7 @@ footer
 
 .panel-default 
 {
-    background-color: #c2dfe3;
+    background-color: #f6f8f9;
     color: #253237;
 }
 
@@ -166,7 +167,8 @@ footer
 
 
 
-.page-footer {
+.page-footer 
+{
     position: fixed;
     left: 0;
     right: 0;
@@ -188,4 +190,20 @@ footer
 #registerbtn:hover
 {
     background-color: #5c6b73;
+}
+
+#loginbtn
+{
+    width: 100%;
+    padding: 14px 20px;
+    background-color: #249ad6;
+    border: none;
+    color: white;
+    font-size: 18px;
+    border-radius: 4px;
+}
+
+#loginbtn:hover
+{
+    background-color: #73bee4;
 }
