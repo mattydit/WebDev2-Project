@@ -1,7 +1,7 @@
 <?php
 session_start();
 
-//error_reporting(E_ALL ^ E_WARNING);
+error_reporting(E_ALL ^ E_WARNING);
 
 //Variables
 $firstname = "";
@@ -52,33 +52,22 @@ if (isset($_POST['acc_submit']))
 }
 
 //Login
+//https://www.tutorialspoint.com/php/php_mysql_login.htm
 if (isset($_POST['acc_login']))
 {
-    $email = mysqli_real_escape_string($db, $_POST['email']);
-    $password = mysqli_real_escape_string($db, $_POST['password']);
+    $email = mysqli_real_escape_string($_POST['email']);
+    $password = $_POST['password'];
     
     //$password = md5($password);
     
-    $query = "SELECT * FROM account WHERE email='$email'";
+    $query = "SELECT * FROM account WHERE email='$email' AND password='$password'";
     $results = mysqli_query($db, $query);
     
     if (mysqli_num_rows($results) == 1)
     {
-        while($row = mysqli_fetch_array($results))
-        {
-            if (password_verify($password, $row['password']))
-            {
-                $_SESSION['email'] = $email;
-                $_SESSION['success'] = "You are now logged in";
-                header('location: index.php');         
-            }
-            else
-            {
-                //return false
-                echo '<script>alert("Wrong email/password")</script';
-            }
-        }
-       
+        $_SESSION['email'] = $email;
+        $_SESSION['success'] = "You are now logged in";
+        header('location: index.php');
     }
     else
     {

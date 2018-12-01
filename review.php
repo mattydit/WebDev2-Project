@@ -39,7 +39,7 @@
         <h2>Write a review</h2>
     <div class="panel panel-default">
         <div class="panel-body">
-            <form method="post">
+            <form method="post" action="server.php">
                 <div class="input-group">
                     <span class="input-group-addon"><i class="glyphicon glyphicon-grain"></i></span>
                     <input id="rname" type="text" class="form-control" name="rname" placeholder="Restaurant name">
@@ -57,11 +57,13 @@
                     <label class="radio-inline"><input type="radio" name="optradio">Dislike</label>
                 </div>
                 <br>
-                	<input type="file" name="file">
-                    <input type="submit" name="submitImage">
                     <br>
 	    			<input type="submit" name="rev" value="Post" class="btn">   
 	    			<input type="submit" value="Cancel" class="btn" style="margin-left: 20px;">
+            </form>
+            <form method="post" action="fileUpload.php" enctype="multipart/form-data">
+                <input type="file" name="fileUpload" id="fileUpload">
+                <input type="submit" name="submitImage"> 
             </form>
         </div>
     </div>
