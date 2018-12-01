@@ -39,7 +39,7 @@
         <h2>Write a review</h2>
     <div class="panel panel-default">
         <div class="panel-body">
-            <form method="post" action="review.php">
+            <form method="post">
                 <div class="input-group">
                     <span class="input-group-addon"><i class="glyphicon glyphicon-grain"></i></span>
                     <input id="rname" type="text" class="form-control" name="rname" placeholder="Restaurant name">
@@ -60,8 +60,7 @@
                 	<input type="file" name="file">
                     <input type="submit" name="submitImage">
                     <br>
-	    			<input type="submit" name="rev" value="Post" class="btn">
-	    			<form action="index.php">
+	    			<input type="submit" name="rev" value="Post" class="btn">   
 	    			<input type="submit" value="Cancel" class="btn" style="margin-left: 20px;">
             </form>
         </div>
