@@ -30,7 +30,7 @@
         </div>
     </div>
     <br><br>
-    <div class="container">
+    <div class="container" style="width: 45%;">
         <h2>Login</h2>
     <div class="panel panel-default">
         <div class="panel-body">
