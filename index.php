@@ -98,40 +98,7 @@
 	<div class="container">
 		<h2>Recent Reviews</h2>
 		<div class="panel panel-default">
-			<div class="panel-body">
-                <div class="row">
-                    <div class="col-md-4">
-                        <div class="thumbnail">
-                            <a href="#">
-                                <img src="images/img9.jpeg" style="width: 100%">
-                                <div class="caption">
-                                    <p>Thumbnail</p>
-                                </div>
-                            </a>
-                        </div>
-                    </div>
-                    <div class="col-md-4">
-                        <div class="thumbnail">
-                            <a href="#">
-                                <img src="images/img10.jpeg" style="width: 100%">
-                                <div class="caption">
-                                    <p>Y</p>
-                                </div>
-                            </a>
-                        </div>
-                    </div>
-                    <div class="col-md-4">
-                        <div class="thumbnail">
-                            <a href="#">
-                                <img src="images/img11.jpeg" style="width: 100%">
-                                <div class="caption">
-                                    <p>s</p>
-                                </div>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-
+			<div class="panel-body">Yurt</div>
 		</div>
 	</div>
 	<div class="container">
