@@ -56,9 +56,9 @@
                 </div>
                 <br>
                 <div class="input-group">
-                    <label class="radio-inline"><input type="radio" name="rating" value="like">Like</label>
-                    <label class="radio-inline"><input type="radio" name="rating" value="okay">Okay</label>
-                    <label class="radio-inline"><input type="radio" name="rating" value="dislike">Dislike</label>
+                    <label class="radio-inline"><input type="radio" name="rating" value="Like">Like</label>
+                    <label class="radio-inline"><input type="radio" name="rating" value="Okay">Okay</label>
+                    <label class="radio-inline"><input type="radio" name="rating" value="Dislike">Dislike</label>
                 </div>
                 <br>
                     <br>
