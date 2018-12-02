@@ -33,11 +33,11 @@ body
 }
 
 
-.container-fluid 
+.container-fluid
 {
 }
 
-/*.navbar-brand 
+/*.navbar-brand
 {
     background-color: #e0fbfc;
     color: #253237;
@@ -73,7 +73,7 @@ footer
     margin: auto;
 }
 
-.login .form-control 
+.login .form-control
 {
     background: #f7f7f7 none repeat scroll 0 0;
     border: 1px solid #d4d4d4;
@@ -112,7 +112,7 @@ footer
     padding: 0;
 }
 
-.login .form-group 
+.login .form-group
 {
     margin-bottom:10px;
 }
@@ -122,7 +122,7 @@ footer
     text-align: center;
 }
 
-#search-box 
+#search-box
 {
     padding-bottom: 40px;
 }
@@ -147,20 +147,20 @@ footer
 }
 
 
-.navbar-inverse 
+.navbar-inverse
 {
     background-color: #253237;
 }
 
 
-.panel-default 
+.panel-default
 {
     background-color: #f6f8f9;
     color: #253237;
 }
 
 
-.text-center 
+.text-center
 {
     background-color: #253237;
 }
@@ -168,16 +168,16 @@ footer
 
 
 
-.page-footer 
+.page-footer
 {
     position: fixed;
     left: 0;
     right: 0;
-    
+
 }
 
 
-#registerbtn 
+#registerbtn
 {
     width: 100%;
     padding: 14px 20px;
@@ -207,4 +207,9 @@ footer
 #loginbtn:hover
 {
     background-color: #73bee4;
+}
+
+#changePass
+{
+  display: none;
 }
