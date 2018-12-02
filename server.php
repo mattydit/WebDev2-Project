@@ -97,5 +97,5 @@ if(isset($_POST['rev']))
     $query = "INSERT INTO review VALUES ('$rname','$review','$rating')";
     mysqli_query($db,$query);
 
-    header('location: index.php');
+    header('location: displayreview.php');
 }

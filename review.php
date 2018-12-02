@@ -1,7 +1,19 @@
 <?php
 	include 'server.php';
-	
 ?>
+<!-- Only users with accounts can post reviews -->
+<?php if(!isset($_SESSION['email'])) : ?>
+    <script type="text/javascript">
+        alert("You must be logged in to write a review");
+        window.location = "index.php";
+    </script>
+<?php else : ?>
+    <script type="text/javascript">
+        window.location = "review.php";
+        return false;
+    </script>
+<?php endif ?>
+
 <!DOCTYPE html>
 <html>
 <head>
