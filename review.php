@@ -1,7 +1,19 @@
 <?php
 	include 'server.php';
-	
 ?>
+<!-- Only users with accounts can post reviews -->
+<?php if(!isset($_SESSION['email'])) : ?>
+    <script type="text/javascript">
+        alert("You must be logged in to write a review");
+        window.location = "index.php";
+    </script>
+<?php else : ?>
+    <script type="text/javascript">
+        window.location = "review.php";
+        return false;
+    </script>
+<?php endif ?>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -26,8 +38,12 @@
                 <li><a href="events.php">Events</a></li>
             </ul>
             <ul class="nav navbar-nav navbar-right">
-                <li><a href="register.php"><span class="glyphicon glyphicon-user"></span> Sign up</a></li>
-                <li><a href="login.php"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+                <?php if(!isset($_SESSION["email"])) : ?>
+                    <li><a href="register.php"><span class="glyphicon glyphicon-user"></span> Sign up</a></li>
+                    <li><a href="login.php"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+                <?php else : ?>
+                    <li><a href="logout.php"><span class="glyphicon glyphicon-log-out"></span> Logout</a></li>
+                <?php endif ?>
             </ul>
         </div>
     </div>
@@ -39,7 +55,7 @@
         <h2>Write a review</h2>
     <div class="panel panel-default">
         <div class="panel-body">
-            <form method="post" action="review.php">
+            <form method="post" action="server.php">
                 <div class="input-group">
                     <span class="input-group-addon"><i class="glyphicon glyphicon-grain"></i></span>
                     <input id="rname" type="text" class="form-control" name="rname" placeholder="Restaurant name">
@@ -52,17 +68,18 @@
                 </div>
                 <br>
                 <div class="input-group">
-                    <label class="radio-inline"><input type="radio" name="optradio">Like</label>
-                    <label class="radio-inline"><input type="radio" name="optradio">Okay</label>
-                    <label class="radio-inline"><input type="radio" name="optradio">Dislike</label>
+                    <label class="radio-inline"><input type="radio" name="rating" value="Like">Like</label>
+                    <label class="radio-inline"><input type="radio" name="rating" value="Okay">Okay</label>
+                    <label class="radio-inline"><input type="radio" name="rating" value="Dislike">Dislike</label>
                 </div>
                 <br>
-                	<input type="file" name="file">
-                    <input type="submit" name="submitImage">
                     <br>
-	    			<input type="submit" name="rev" value="Post" class="btn">
-	    			<form action="index.php">
+	    			<input type="submit" name="rev" id="rev" value="Post" class="btn">
 	    			<input type="submit" value="Cancel" class="btn" style="margin-left: 20px;">
+            </form>
+                <form method="post" action="fileUpload.php" enctype="multipart/form-data">
+                    <input type="file" name="fileUpload" id="fileUpload">
+                    <input type="submit" name="submitImage"> 
             </form>
         </div>
     </div>

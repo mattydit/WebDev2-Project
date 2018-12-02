@@ -112,8 +112,10 @@ if(isset($_POST['rev']))
 {
     $rname = $_POST['rname'];
     $review = $_POST['review'];
-    $rating = $_POST['optradio'];
+    $rating = $_POST['rating'];
 
-    $query = "INSERT INTO review VALUES ($rname','$review','$rating')";
+    $query = "INSERT INTO review VALUES ('$rname','$review','$rating')";
     mysqli_query($db,$query);
+
+    header('location: displayreview.php');
 }
