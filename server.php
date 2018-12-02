@@ -90,10 +90,15 @@ if (isset($_POST['acc_login']))
 //
 if(isset($_POST['rev']))
 {
+    $q = "SELECT * FROM account WHERE email = $_SESSION['email']";
+    $r = mysqli_query($db,$q);
+    $page = mysqli_fetch_assoc($r);
+    $reviewer = $page['fname'];
     $rname = $_POST['rname'];
     $review = $_POST['review'];
-    $rating = $_POST['optradio'];
+    $rating = $_POST['rating'];
 
-    $query = "INSERT INTO review VALUES ($rname','$review','$rating')";
+    $query = "INSERT INTO review VALUES ('$reviewer','$rname','$review','$rating')";
+    echo "$reviewer";
     mysqli_query($db,$query);
 }
