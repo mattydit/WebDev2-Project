@@ -35,37 +35,29 @@
             </ul>
         </div>
     </div>
-
+    <!-- where email = '".$_SESSION['email']."'" -->
     <?php
-
-
-    $sql = "SELECT * FROM review;";
+    $sql = "SELECT * FROM review";
     $result = mysqli_query($db,$sql);
     $resultCheck = mysqli_num_rows($result);
-    $rname = array();
 
     if($resultCheck > 0){
         while($row = mysqli_fetch_assoc($result)){
-            $rname = $row['rname'];
-                    echo $rname;
+
+            echo '<div class="container">';
+            echo '<h2>' . $row['rname'] . '</h2>';
+            echo '<div class="panel panel-default">';
+            echo '<div class="panel-body">';
+            echo '<img style="width: 200px; height: 200px; float: left; padding-right: 10px;" src="images/userImages/' . $row["image"].'">';
+            echo '<p>' . $row['review'] . '</p>';
+            echo "by " .$row['reviewer'];
+            
+            echo '</div>';
+            echo '</div>';
+            echo '</div>';
         }
     }
-    echo "<div class="container">
-        <div class="panel panel-default">
-            <div class="panel-body">
-                <div class="media">
-                    <div class="media-left">
-                        <?php "<img src=".$image_query_fetch['image'];?>
-                    </div>
-                    <div class="media-body">
-                        <h4 class="media-heading"><?php echo $row['rname']; ?></h4>
-                        <p>Rating: </p>
-                        <p></p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>";
+
     ?>
 
 

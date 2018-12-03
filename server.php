@@ -27,10 +27,12 @@ if (mysqli_connect_errno())
 //Registration
 if (isset($_POST['acc_submit']))
 {
+
     $firstname = $_POST['firstname'];
     $surname = $_POST['surname'];
     $email = $_POST['email'];
     $password = $_POST['password'];
+
 
     if($_POST[password] != $_POST[password_confirm])
     {
@@ -38,16 +40,17 @@ if (isset($_POST['acc_submit']))
     }
     else
     {
+        $x = 1;
         $password = $_POST[password];
         $password = password_hash($password, PASSWORD_DEFAULT);
 
         //Register the account
-        $query = "INSERT INTO account VALUES ('$firstname', '$surname', '$email', '$password')";
+        $query = "INSERT INTO account VALUES ('$firstname', '$surname', '$email', '$password','$x')";
         mysqli_query($db,$query);
 
         $_SESSION['email'] = $email;
         $_SESSION['success'] = "You are now logged in";
-        header('location: index.php');
+        //header('location: index.php');
     }
 }
 
@@ -87,7 +90,7 @@ if (isset($_POST['acc_login']))
 }
 
 
-//
+//send user review to database
 if(isset($_POST['rev']))
 {
     $fileUpload = $_FILES['fileUpload'];
@@ -109,7 +112,6 @@ if(isset($_POST['rev']))
                 $fileNameNew = uniqid('', true).".".$fileActualExt;
                 $target_dir = 'images/userImages/'.$fileNameNew;
                 move_uploaded_file($fileTmpName, $target_dir);
-                //move_uploaded_file("images/userImages/"."filename".$fileNameNew);
             }else{
                 echo "File is too large";
             }
@@ -120,15 +122,59 @@ if(isset($_POST['rev']))
         echo "Invalid file type";
     }
 
+    $sql = "SELECT * FROM account WHERE email = '".$_SESSION['email']."'";
+    $result = mysqli_query($db,$sql);
+    $resultCheck = mysqli_num_rows($result);
+
+    if($resultCheck > 0){
+        while($row = mysqli_fetch_assoc($result)){
+            $reviewer = $row['firstname'];
+        }
+    }
 
     $rname = $_POST['rname'];
     $review = $_POST['review'];
     $rating = $_POST['rating'];
-
-    $q = "INSERT INTO review VALUES ('$rname','$review','$rating')";
+    $email = $_SESSION['email'];
+    $q = "INSERT INTO review VALUES ('$reviewer','$rname','$review','$rating','$fileNameNew','$email')";
     mysqli_query($db,$q);
+    header('location: displayreview.php?reviewsent');
+}
+//update profile picture
+if(isset($_POST['updateProfile'])){
+        $profileUpload = $_FILES['profileUpload'];
 
-    header('location: index.php?reviewsent');
+    $fileName = $_FILES['profileUpload']['name'];
+    $fileTmpName = $_FILES['profileUpload']['tmp_name'];
+    $fileSize = $_FILES['profileUpload']['size'];
+    $fileError = $_FILES['profileUpload']['error'];
+    $fileType = $_FILES['profileUpload']['type'];
+
+    $fileExt = explode('.',$fileName);
+    $fileActualExt = strtolower(end($fileExt));
+    $allowed = array('jpeg','jpg','png','gif');
+
+    if(in_array($fileActualExt, $allowed)){
+        if($fileError === 0){
+            if($fileSize < 500000){
+                //Give image unique name to prevent overwriting
+                $fileNameNew = uniqid('', true).".".$fileActualExt;
+                $target_dir = 'images/profileImage/'.$fileNameNew;
+                move_uploaded_file($fileTmpName, $target_dir);
+                header('location: myaccount.php');
+            }else{
+                echo "File is too large";
+            }
+        }else{
+            echo "Error uploading file";
+        }
+    }else{
+        echo "Invalid file type";
+    }
+
+    $q = "UPDATE account SET image = '$fileNameNew' WHERE email = '".$_SESSION['email']."'";
+    mysqli_query($db,$q);
+    header('location: myaccount.php');
 }
 
 ?>

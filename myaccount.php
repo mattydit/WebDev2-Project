@@ -23,7 +23,7 @@
             </div>
             <ul class="nav navbar-nav">
                 <li><a href="index.php">Home</a></li>
-                <li><a href="review.php">Reviews</a></li>
+                <li><a href="displayreview.php">Reviews</a></li>
                 <li><a href="featured.php">Featured</a></li>
                 <li><a href="events.php">Events</a></li>
             </ul>
@@ -32,7 +32,8 @@
                     <li><a href="register.php"><span class="glyphicon glyphicon-user"></span> Sign up</a></li>
                     <li><a href="login.php"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
                 <?php else : ?>
-                    <li class="active"><a href="myaccount.php">My Account</a></li>
+                    <li><a href="review.php">Write Review</a></li>
+                    <li><a href="myaccount.php">My Account</a></li>
                     <li><a href="logout.php"><span class="glyphicon glyphicon-log-out"></span> Logout</a></li>
                 <?php endif ?>
             </ul>
@@ -43,7 +44,21 @@
 			<h2>My Account</h2>
 			<div class="panel panel-default">
 				<div class="panel-body">
-					Edit account details:<br><br>
+					<?php
+					$sql = "SELECT * FROM account WHERE email = '".$_SESSION['email']."'";
+				    $result = mysqli_query($db,$sql);
+				    $resultCheck = mysqli_num_rows($result);
+
+				    if($resultCheck > 0){
+				        while($row = mysqli_fetch_assoc($result)){
+				        	echo "<div>";
+				        	echo '<img style="width: 200px; height: 200px; float: left; padding-right: 10px;" src="images/profileImage/' . $row["image"].'">';
+				        	echo "</div>";
+				        }
+				    }
+					?>
+					<br>
+					<h1>Edit account details:</h1><br>
 					<button type="button" class="btn btn-primary" onclick="showhide('changePass');">Change Password</button>
 					<br><br>
 					<div id="changePass">
@@ -59,7 +74,11 @@
 							<input type="submit" class="btn btn-success" name="change_pass" value="Confirm">
 						</form>
 					</div>
-					<button type="button" class="btn btn-primary" onclick="showhide('');">Change Profile Picture</button>
+					<form method="post" action="server.php" enctype="multipart/form-data">
+						<label for="profileUpload">Change profile picture</label>
+						<input type="file" name="profileUpload" id="profileUpload">
+						<input type="submit" name="updateProfile" id="updateProfile">
+					</form>
 					<br><br>
 					<button type="button" class="btn btn-danger" onclick="showhide('deleteAccount');">Delete Account</button>
 					<br><br>
