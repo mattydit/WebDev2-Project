@@ -1,4 +1,5 @@
 <?php include 'server.php'; ?>
+<?php include 'account.php'; ?>
 
 <!DOCTYPE html>
 <html>
@@ -18,7 +19,7 @@
                 <a class="navbar-brand" href="index.php">Reviews Portal</a>
             </div>
             <ul class="nav navbar-nav">
-                <li class="active"><a href="index.php">Home</a></li>
+                <li><a href="index.php">Home</a></li>
                 <li><a href="review.php">Reviews</a></li>
                 <li><a href="featured.php">Featured</a></li>
                 <li><a href="events.php">Events</a></li>
@@ -31,29 +32,28 @@
     </div>
     <br><br>
     <div class="container" style="width: 45%;">
-        <h2>Login</h2>
+        <h2>Password Recovery</h2>
     <div class="panel panel-default">
         <div class="panel-body">
-            <form method="post" action="login.php">
-                <div class="input-group">
-                    <span class="input-group-addon"><i class="glyphicon glyphicon-envelope"></i></span>
-                    <input id="email" type="email" class="form-control" name="email" placeholder="Email address">
+            <form name="passRecovery" method="post" action="resetpassword.php">
+                <div class="form-group">
+                    <label for="email">Email address:</label>
+										<input type="email" class="form-control" name="email">
                 </div>
-                <br>
-                <div class="input-group">
-                    <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
-                    <input id="password" type="password" class="form-control" name="password" placeholder="Password">
+                <!--<br>
+                <div class="form-group">
+                    <label for="token">Recovery token:</label>
+										<input type="text" class="form-control" name="token">
                 </div>
+                <br>-->
+                <input type="submit" id="loginbtn" name="acc_submit" value="Send Recovery">
                 <br>
-                <input type="submit" id="loginbtn" name="acc_login" value="Log in">
-                <br><br>
-								<a href="resetpassword.php">Forgot your password?</a>
             </form>
         </div>
     </div>
     </div>
 
-    <br><br><br><br><br><br><br><br><br><br><br><br>
+    <br><br><br><br><br><br><br><br><br><br><br><br><br><br>
     <footer class="container-fluid text-center">
         <p>lorem</p>
     </footer>

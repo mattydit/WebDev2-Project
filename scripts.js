@@ -14,7 +14,25 @@ function showhide(id)
         }
 }
 
-//function validatePassword()
-//{
+function validatePassword()
+{
+  var password = document.passwordForm.new_password.value;
+  var confirm = document.passwordForm.confirm_new.value;
 
-//}
+  if (password.trim() != confirm.trim())
+  {
+    alert("The passwords do not match.");
+    return false;
+  }
+}
+
+function deleteCheck()
+{
+  var confirm = document.deleteForm.deleteConfirm.value;
+
+  if (confirm.trim() != "delete")
+  {
+    alert("Please type \"delete\" to delete the account.");
+    return false;
+  }
+}
