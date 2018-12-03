@@ -110,12 +110,45 @@ if (isset($_POST['change_pass']))
 //
 if(isset($_POST['rev']))
 {
+    $fileUpload = $_FILES['fileUpload'];
+
+    $fileName = $_FILES['fileUpload']['name'];
+    $fileTmpName = $_FILES['fileUpload']['tmp_name'];
+    $fileSize = $_FILES['fileUpload']['size'];
+    $fileError = $_FILES['fileUpload']['error'];
+    $fileType = $_FILES['fileUpload']['type'];
+
+    $fileExt = explode('.',$fileName);
+    $fileActualExt = strtolower(end($fileExt));
+    $allowed = array('jpeg','jpg','png','gif');
+
+    if(in_array($fileActualExt, $allowed)){
+        if($fileError === 0){
+            if($fileSize < 500000){
+                //Give image unique name to prevent overwriting
+                $fileNameNew = uniqid('', true).".".$fileActualExt;
+                $target_dir = 'images/userImages/'.$fileNameNew;
+                move_uploaded_file($fileTmpName, $target_dir);
+                //move_uploaded_file("images/userImages/"."filename".$fileNameNew);
+            }else{
+                echo "File is too large";
+            }
+        }else{
+            echo "Error uploading file";
+        }
+    }else{
+        echo "Invalid file type";
+    }
+
+
     $rname = $_POST['rname'];
     $review = $_POST['review'];
     $rating = $_POST['rating'];
 
-    $query = "INSERT INTO review VALUES ('$rname','$review','$rating')";
-    mysqli_query($db,$query);
+    $q = "INSERT INTO review VALUES ('$rname','$review','$rating')";
+    mysqli_query($db,$q);
 
-    header('location: displayreview.php');
+    header('location: index.php?reviewsent');
 }
+
+?>
