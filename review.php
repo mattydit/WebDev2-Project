@@ -42,6 +42,7 @@
                     <li><a href="register.php"><span class="glyphicon glyphicon-user"></span> Sign up</a></li>
                     <li><a href="login.php"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
                 <?php else : ?>
+                    <li><a href="myaccount.php">My Account</a></li>
                     <li><a href="logout.php"><span class="glyphicon glyphicon-log-out"></span> Logout</a></li>
                 <?php endif ?>
             </ul>
@@ -55,7 +56,7 @@
         <h2>Write a review</h2>
     <div class="panel panel-default">
         <div class="panel-body">
-            <form method="post" action="server.php">
+            <form method="post" action="server.php" enctype="multipart/form-data">
                 <div class="input-group">
                     <span class="input-group-addon"><i class="glyphicon glyphicon-grain"></i></span>
                     <input id="rname" type="text" class="form-control" name="rname" placeholder="Restaurant name">
@@ -74,12 +75,9 @@
                 </div>
                 <br>
                     <br>
+                    <input type="file" name="fileUpload" id="fileUpload" style="padding-bottom: 10px;">
 	    			<input type="submit" name="rev" id="rev" value="Post" class="btn">
 	    			<input type="submit" value="Cancel" class="btn" style="margin-left: 20px;">
-            </form>
-                <form method="post" action="fileUpload.php" enctype="multipart/form-data">
-                    <input type="file" name="fileUpload" id="fileUpload">
-                    <input type="submit" name="submitImage"> 
             </form>
         </div>
     </div>

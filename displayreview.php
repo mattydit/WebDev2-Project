@@ -37,12 +37,35 @@
     </div>
 
     <?php
-    $sql = "SELECT * FROM review";
-    $r = mysqli_query($db,$sql);
 
-    echo $r['rname'];
-    echo $r['review'];
-    echo $r['rating'];
+
+    $sql = "SELECT * FROM review;";
+    $result = mysqli_query($db,$sql);
+    $resultCheck = mysqli_num_rows($result);
+    $rname = array();
+
+    if($resultCheck > 0){
+        while($row = mysqli_fetch_assoc($result)){
+            $rname = $row['rname'];
+                    echo $rname;
+        }
+    }
+    echo "<div class="container">
+        <div class="panel panel-default">
+            <div class="panel-body">
+                <div class="media">
+                    <div class="media-left">
+                        <?php "<img src=".$image_query_fetch['image'];?>
+                    </div>
+                    <div class="media-body">
+                        <h4 class="media-heading"><?php echo $row['rname']; ?></h4>
+                        <p>Rating: </p>
+                        <p></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>";
     ?>
 
 
