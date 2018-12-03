@@ -1,4 +1,5 @@
 <?php include 'server.php'; ?>
+<?php include 'account.php'; ?>
 
 <!DOCTYPE html>
 <html>
@@ -49,13 +50,26 @@
 						<form method="post" action="myaccount.php" style="width: 50%;">
 							<div class="form-group">
 								<label for="new_password">New Password:</label>
-								<input type="password" class="form-control" name="new_password" id="new_password">
+								<input type="password" class="form-control" name="new_password" id="new_password" required>
 							</div>
 							<div class="form-group">
 								<label for="confirm_new">Confirm Password:</label>
-								<input type="password" class="form-control" name="confirm_new" id="confirm_new">
+								<input type="password" class="form-control" name="confirm_new" id="confirm_new" required>
 							</div>
-							<input type="submit" class="btn btn-success" name="change_pass"></button>
+							<input type="submit" class="btn btn-success" name="change_pass" value="Confirm">
+						</form>
+					</div>
+					<button type="button" class="btn btn-primary" onclick="showhide('');">Change Profile Picture</button>
+					<br><br>
+					<button type="button" class="btn btn-danger" onclick="showhide('deleteAccount');">Delete Account</button>
+					<br><br>
+					<div id="deleteAccount">
+						<form method="post" action="myaccount.php" style="width: 50%;">
+							<div class="form-group">
+								<label for="deleteConfirm">Please type "delete" in the box below:</label>
+								<input type="text" class="form-control" name="deleteConfirm" id="deleteConfirm" required>
+							</div>
+							<input type="submit" class="btn btn-danger" name="delete" value="Confirm">
 						</form>
 					</div>
 				</div>

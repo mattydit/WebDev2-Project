@@ -13,3 +13,8 @@ function showhide(id)
             $(e).toggle(1000);
         }
 }
+
+//function validatePassword()
+//{
+
+//}

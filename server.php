@@ -86,26 +86,6 @@ if (isset($_POST['acc_login']))
     }
 }
 
-//Change password
-if (isset($_POST['change_pass']))
-{
-
-  $password_field = $_POST['new_password'];
-
-  $new_pass = mysqli_real_escape_string($db, $password_field);
-  $new_pass = password_hash($new_pass, PASSWORD_DEFAULT);
-
-  $query = "UPDATE account SET password ='$new_pass' WHERE email ='$email'";
-  if (mysqli_query($db, $query) == TRUE)
-  {
-    echo '<script>alert("Updated successfully")</script';
-  }
-  else
-  {
-    echo '<script>alert("Error updating")</script';
-  }
-  header('location: myaccount.php');
-}
 
 //
 if(isset($_POST['rev']))

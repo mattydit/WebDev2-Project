@@ -30,7 +30,7 @@
         </div>
     </div>
 	<div class="main">
-		
+
 	</div>
     <br><br>
     <div class="container">
@@ -40,38 +40,43 @@
             <form method="post" action="register.php">
                 <div class="input-group">
                     <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-                    <input id="firstname" type="text" class="form-control" name="firstname" placeholder="First Name">
+                    <input id="firstname" type="text" class="form-control" name="firstname" placeholder="First Name" required>
                 </div>
                 <br>
                 <div class="input-group">
                     <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-                    <input id="surname" type="text" class="form-control" name="surname" placeholder="Surname">
+                    <input id="surname" type="text" class="form-control" name="surname" placeholder="Surname" required>
                 </div>
                 <br>
                 <br>
                 <div class="input-group">
                     <span class="input-group-addon"><i class="glyphicon glyphicon-envelope"></i></span>
-                    <input id="email" type="email" class="form-control" name="email" placeholder="Email address">
+                    <input id="email" type="email" class="form-control" name="email" placeholder="Email address" required>
                 </div>
                 <br>
                 <br>
                 <div class="input-group">
                     <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
-                    <input id="password" type="password" class="form-control" name="password" placeholder="Password">
+                    <input id="password" type="password" class="form-control" name="password" placeholder="Password" required>
                 </div>
                 <br>
                 <div class="input-group">
                     <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
-                    <input id="password" type="password" class="form-control" name="password_confirm" placeholder="Confirm Password">
+                    <input id="password" type="password" class="form-control" name="password_confirm" placeholder="Confirm Password" required>
                 </div>
+								<br>
+								<div class="input-group">
+									<label for="profilePic">Upload profile picture</label>
+									<input type="file" name="profilePic">
+								</div>
                 <br>
                 <input type="submit" id="registerbtn" name="acc_submit" value="Register">
-                
+
             </form>
         </div>
     </div>
     </div>
-    
+
     <br><br><br><br><br><br><br><br><br>
     <footer class="container-fluid text-center">
         <p>lorem</p>
