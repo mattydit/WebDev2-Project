@@ -13,6 +13,7 @@ function showhide(id)
             $(e).toggle(1000);
         }
 }
+<<<<<<< HEAD
 
 function validatePassword()
 {
@@ -36,3 +37,5 @@ function deleteCheck()
     return false;
   }
 }
+=======
+>>>>>>> 23eb8ac58f8d11712496274f32bc3a4e141e66dd

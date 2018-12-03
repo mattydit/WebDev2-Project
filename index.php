@@ -22,7 +22,7 @@
             </div>
             <ul class="nav navbar-nav">
                 <li class="active"><a href="index.php">Home</a></li>
-                <li><a href="review.php">Reviews</a></li>
+                <li><a href="displayreview.php">Reviews</a></li>
                 <li><a href="featured.php">Featured</a></li>
                 <li><a href="events.php">Events</a></li>
             </ul>
@@ -31,6 +31,7 @@
                     <li><a href="register.php"><span class="glyphicon glyphicon-user"></span> Sign up</a></li>
                     <li><a href="login.php"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
                 <?php else : ?>
+                    <li><a href="review.php">Write Review</a></li>
                     <li><a href="myaccount.php">My Account</a></li>
                     <li><a href="logout.php"><span class="glyphicon glyphicon-log-out"></span> Logout</a></li>
                 <?php endif ?>

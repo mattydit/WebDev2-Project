@@ -56,6 +56,19 @@
         <h2>Write a review</h2>
     <div class="panel panel-default">
         <div class="panel-body">
+            <?php
+            // $sql = "SELECT * FROM review";
+            // $result = mysqli_query($db,$sql);
+            // $resultCheck = mysqli_num_rows($result);
+
+            // if($resultCheck > 0){
+            //     while($row = mysqli_fetch_assoc($result)){
+            //         $image = $row['firstname'];
+            //     }
+            // }
+            echo "<img src='images/blank.jpg' style='width: 100px;'>";
+            ?>
+            <br><br><br>
             <form method="post" action="server.php" enctype="multipart/form-data">
                 <div class="input-group">
                     <span class="input-group-addon"><i class="glyphicon glyphicon-grain"></i></span>

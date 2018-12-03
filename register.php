@@ -65,10 +65,8 @@
                     <input id="password" type="password" class="form-control" name="password_confirm" placeholder="Confirm Password" required>
                 </div>
 								<br>
-								<div class="input-group">
 									<label for="profilePic">Upload profile picture</label>
-									<input type="file" name="profilePic">
-								</div>
+									<input type="file" name="profilePic" id="profilePic">
                 <br>
                 <input type="submit" id="registerbtn" name="acc_submit" value="Register">
 
