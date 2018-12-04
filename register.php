@@ -8,6 +8,7 @@
 	<link rel="stylesheet" href="style.css">
   	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+		<script src="scripts.js" type="text/javascript"></script>
 	<meta charset="utf-8">
     <link rel="icon" href="images/icon.jpg">
 </head>
@@ -37,7 +38,7 @@
         <h2>Create an Account</h2>
     <div class="panel panel-default">
         <div class="panel-body">
-            <form method="post" action="register.php">
+            <form name="registrationForm" method="post" action="register.php" onsubmit="return(validateRegister());">
                 <div class="input-group">
                     <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
                     <input id="firstname" type="text" class="form-control" name="firstname" placeholder="First Name" required>

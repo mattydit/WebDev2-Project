@@ -122,12 +122,12 @@ footer
     text-align: center;
 }
 
-#search-box
+.search-box
 {
     padding-bottom: 40px;
 }
 
-#search-box input[type=text]
+.search-box input[type=text]
 {
     border: none;
     font-size: 17px;
@@ -136,7 +136,7 @@ footer
     height: 35px;
 }
 
-#search-box button
+.search-box button
 {
     float: right;
     width: 15%;
@@ -215,6 +215,16 @@ footer
 }
 
 #deleteAccount
+{
+  display: none;
+}
+
+.result
+{
+  background-color: white;
+}
+
+#changePhoto
 {
   display: none;
 }

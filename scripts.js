@@ -13,7 +13,6 @@ function showhide(id)
             $(e).toggle(1000);
         }
 }
-<<<<<<< HEAD
 
 function validatePassword()
 {
@@ -37,5 +36,32 @@ function deleteCheck()
     return false;
   }
 }
-=======
->>>>>>> 23eb8ac58f8d11712496274f32bc3a4e141e66dd
+
+function validateRegister()
+{
+  var regex = /^[A-Za-z\s]+$/;
+  var emailvalid = /^[\w\-\.\+]+\@[a-zA-Z0-9\.\-]+\.[a-zA-z0-9]{2,4}$/;
+
+  var name = document.registrationForm.firstname.value;
+  var surname = document.registrationForm.surname.value;
+  var email = document.registrationForm.email.value;
+  var pass = document.registrationForm.password.value;
+  var pass_confirm = document.registrationForm.password_confirm.value;
+
+  if(!name.match(regex))
+  {
+    alert("Only letters allowed in the name field.");
+    return false;
+  }
+  if(!surname.match(regex))
+  {
+    alert("Only letters allowed in the surname field.");
+    return false;
+  }
+  if(!email.match(emailvalid))
+  {
+    alert("Please enter a valid email address in the format: example@example.com");
+    return false;
+  }
+
+}
