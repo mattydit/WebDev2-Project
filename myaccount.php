@@ -60,7 +60,7 @@
 					<button type="button" class="btn btn-primary" onclick="showhide('changePass');">Change Password</button>
 					<br><br>
 					<div id="changePass">
-						<form method="post" action="myaccount.php" style="width: 50%;">
+						<form name="passwordForm" method="post" action="myaccount.php" onsubmit="return(validatePassword());" style="width: 50%;">
 							<div class="form-group">
 								<label for="new_password">New Password:</label>
 								<input type="password" class="form-control" name="new_password" id="new_password" required>
@@ -81,7 +81,7 @@
 					<button type="button" class="btn btn-danger" onclick="showhide('deleteAccount');">Delete Account</button>
 					<br><br>
 					<div id="deleteAccount">
-						<form method="post" action="myaccount.php" style="width: 50%;">
+						<form name="deleteForm" method="post" action="myaccount.php" onsubmit="return(deleteCheck());" style="width: 50%;">
 							<div class="form-group">
 								<label for="deleteConfirm">Please type "delete" in the box below:</label>
 								<input type="text" class="form-control" name="deleteConfirm" id="deleteConfirm" required>
