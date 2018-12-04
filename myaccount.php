@@ -70,11 +70,13 @@
 							<input type="submit" class="btn btn-success" name="change_pass" value="Confirm">
 						</form>
 					</div>
+					<button type="button" class="btn btn-primary" onclick="showhide('changePhoto');">Change Profile Picture</button>
+					<div id="changePhoto"><br>
 					<form method="post" action="server.php" enctype="multipart/form-data">
-						<label for="profileUpload">Change profile picture</label>
 						<input type="file" name="profileUpload" id="profileUpload">
-						<input type="submit" name="updateProfile" id="updateProfile">
+						<input type="submit" name="updateProfile" id="updateProfile" value="Upload Photo">
 					</form>
+				</div>
 					<br><br>
 					<button type="button" class="btn btn-danger" onclick="showhide('deleteAccount');">Delete Account</button>
 					<br><br>

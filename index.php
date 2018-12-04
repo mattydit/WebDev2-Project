@@ -9,6 +9,26 @@
 	<link rel="stylesheet" href="style.css">
   	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script type="text/javascript">
+      $(document).ready(function(){
+        $('.search-box input[type=text]').on("keyup input", function(){
+            var inputval = $(this).val();
+            var result = $(this).siblings(".result");
+
+            if(inputval.length)
+            {
+              $.get("search.php", {term:inputval}).done(function(data){
+                //Display the data.
+                result.html(data);
+              });
+            }
+            else
+            {
+              result.empty();
+            }
+        });
+      });
+    </script>
 	<meta charset="utf-8">
     <link rel="icon" href="images/icon.jpg">
 </head>
@@ -41,7 +61,6 @@
         <h2>Featured Restaurants</h2>
     <div class="panel panel-default">
         <div class="panel-body">
-        <!-- https://bootsnipp.com/snippets/featured/responsive-moving-box-carousel -youngfella -->
 	       <div id="SlideShow" class="carousel slide" data-ride="carousel" style="width:  75%; margin: auto;">
                 <ol class="carousel-indicators">
                     <li data-target="#SlideShow" data-slide-to="0" class="active"></li>
@@ -49,10 +68,11 @@
                     <li data-target="#SlideShow" data-slide-to="2"></li>
                     <li data-target="#SlideShow" data-slide-to="3"></li>
 
-                    <div id="search-box">
-                        <form action="/search.php">
-                            <input type="text" placeholder="Search...">
-                            <button type="submit"><span class="glyphicon glyphicon-search"></span></button>
+                    <div class="search-box">
+                        <form method="post" name="searchForm" action="search.php">
+                            <input type="text" placeholder="Search..." id="searchbox" autocomplete="off">
+                            <button name="searchReview" type="submit"><span class="glyphicon glyphicon-search"></span></button>
+                            <div class="result"></div>
                         </form>
                     </div>
                </ol>

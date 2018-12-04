@@ -177,5 +177,3 @@ if(isset($_POST['updateProfile'])){
     mysqli_query($db,$q);
     header('location: myaccount.php');
 }
-
-?>
