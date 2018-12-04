@@ -4,6 +4,7 @@ include 'server.php';
 //Change password
 if (isset($_POST['change_pass']))
 {
+  $email = $_SESSION["email"];
 
   $new_pass = mysqli_real_escape_string($db, $_POST['new_password']);
   $new_pass = password_hash($new_pass, PASSWORD_DEFAULT);

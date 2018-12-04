@@ -6,11 +6,11 @@
 <head>
 	<title>Review Portal</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-	<link rel="stylesheet" href="style.css">
+		<link rel="stylesheet" href="style.css">
   	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-	<script src="scripts.js" type="text/javascript"></script>
-	<meta charset="utf-8">
+		<script src="scripts.js" type="text/javascript"></script>
+		<meta charset="utf-8">
     <link rel="icon" href="images/icon.jpg">
 </head>
 <body>
@@ -31,7 +31,7 @@
                     <li><a href="login.php"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
                 <?php else : ?>
                     <li><a href="review.php">Write Review</a></li>
-                    <li class="active"><a href="myaccount.php">My Account</a></li>
+                    <li><a href="myaccount.php">My Account</a></li>
                     <li><a href="logout.php"><span class="glyphicon glyphicon-log-out"></span> Logout</a></li>
                 <?php endif ?>
             </ul>
@@ -58,7 +58,7 @@
 					<button type="button" class="btn btn-primary" onclick="showhide('changePass');">Change Password</button>
 					<br><br>
 					<div id="changePass">
-						<form method="post" action="myaccount.php" style="width: 50%;">
+						<form name="passwordForm" method="post" action="myaccount.php" onsubmit="return(validatePassword());" style="width: 50%;">
 							<div class="form-group">
 								<label for="new_password">New Password:</label>
 								<input type="password" class="form-control" name="new_password" id="new_password" required>
@@ -81,7 +81,7 @@
 					<button type="button" class="btn btn-danger" onclick="showhide('deleteAccount');">Delete Account</button>
 					<br><br>
 					<div id="deleteAccount">
-						<form method="post" action="myaccount.php" style="width: 50%;">
+						<form name="deleteForm" method="post" action="myaccount.php" onsubmit="return(deleteCheck());" style="width: 50%;">
 							<div class="form-group">
 								<label for="deleteConfirm">Please type "delete" in the box below:</label>
 								<input type="text" class="form-control" name="deleteConfirm" id="deleteConfirm" required>

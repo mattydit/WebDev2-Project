@@ -1,0 +1,1 @@
+Database file necessary to set up the project is called reviewdb.sql which is inside the sql files folder in the root of the project.
