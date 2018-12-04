@@ -23,11 +23,10 @@
             <ul class="nav navbar-nav">
                 <li class="active"><a href="index.php">Home</a></li>
                 <li><a href="displayreview.php">Reviews</a></li>
-                <li><a href="featured.php">Featured</a></li>
-                <li><a href="events.php">Events</a></li>
             </ul>
             <ul class="nav navbar-nav navbar-right">
                 <?php if(!isset($_SESSION["email"])) : ?>
+                    <li><a href="review.php">Write Review</a></li>
                     <li><a href="register.php"><span class="glyphicon glyphicon-user"></span> Sign up</a></li>
                     <li><a href="login.php"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
                 <?php else : ?>
@@ -93,44 +92,29 @@
         </div>
     </div>
     </div>
-	<div class="container">
-		<h2>Recent Reviews</h2>
-		<div class="panel panel-default">
-			<div class="panel-body">
-                <div class="row">
-                    <div class="col-md-4">
-                        <div class="thumbnail">
-                            <a href="#">
-                                <img src="images/img9.jpeg" style="width: 100%">
-                                <div class="caption">
-                                    <p>Thumbnail</p>
-                                </div>
-                            </a>
-                        </div>
-                    </div>
-                    <div class="col-md-4">
-                        <div class="thumbnail">
-                            <a href="#">
-                                <img src="images/img10.jpeg" style="width: 100%">
-                                <div class="caption">
-                                    <p>Y</p>
-                                </div>
-                            </a>
-                        </div>
-                    </div>
-                    <div class="col-md-4">
-                        <div class="thumbnail">
-                            <a href="#">
-                                <img src="images/img11.jpeg" style="width: 100%">
-                                <div class="caption">
-                                    <p>s</p>
-                                </div>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-		</div>
-	</div>
+    <div class="container">
+      <h2>Recent Reviews</h2>
+      <div class="panel panel-default">
+        <div class="panel panel-body">
+    <?php
+    $sql = "SELECT * FROM review";
+    $result = mysqli_query($db,$sql);
+    $resultCheck = mysqli_num_rows($result);
+
+    if($resultCheck > 0){
+        while($row = mysqli_fetch_assoc($result)){
+          echo '<a href="displayreview.php"';
+          echo '</a>';
+          echo '<img style="max-width: 300px; float: left; padding-right: 10px;" src="images/userImages/' . $row["image"].'">';
+          //echo '<p>' . $row['rname'] . '</p>';
+        }
+    }
+    ?>
+  </div>
+</div>
+</div>
+</a>
+
 	<div class="container">
 		<h2>News</h2>
 		<div class="panel panel-default">
@@ -166,7 +150,6 @@
 		</div>
 	</div>
     <footer class="container-fluid text-center">
-        <p>yurt</p>
     </footer>
 </body>
 </html>

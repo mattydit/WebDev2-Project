@@ -19,9 +19,7 @@
             </div>
             <ul class="nav navbar-nav">
                 <li class="active"><a href="index.php">Home</a></li>
-                <li><a href="review.php">Reviews</a></li>
-                <li><a href="featured.php">Featured</a></li>
-                <li><a href="events.php">Events</a></li>
+                <li><a href="displayreview.php">Reviews</a></li>
             </ul>
             <ul class="nav navbar-nav navbar-right">
                 <li><a href="register.php"><span class="glyphicon glyphicon-user"></span> Sign up</a></li>
@@ -64,9 +62,6 @@
                     <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
                     <input id="password" type="password" class="form-control" name="password_confirm" placeholder="Confirm Password" required>
                 </div>
-								<br>
-									<label for="profilePic">Upload profile picture</label>
-									<input type="file" name="profilePic" id="profilePic">
                 <br>
                 <input type="submit" id="registerbtn" name="acc_submit" value="Register">
 

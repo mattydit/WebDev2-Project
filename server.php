@@ -104,9 +104,10 @@ if(isset($_POST['rev']))
     $fileExt = explode('.',$fileName);
     $fileActualExt = strtolower(end($fileExt));
     $allowed = array('jpeg','jpg','png','gif');
-
+    //check if valid file
     if(in_array($fileActualExt, $allowed)){
         if($fileError === 0){
+            //check file size
             if($fileSize < 500000){
                 //Give image unique name to prevent overwriting
                 $fileNameNew = uniqid('', true).".".$fileActualExt;
@@ -121,7 +122,7 @@ if(isset($_POST['rev']))
     }else{
         echo "Invalid file type";
     }
-
+    //link image to user using email address
     $sql = "SELECT * FROM account WHERE email = '".$_SESSION['email']."'";
     $result = mysqli_query($db,$sql);
     $resultCheck = mysqli_num_rows($result);
@@ -131,14 +132,14 @@ if(isset($_POST['rev']))
             $reviewer = $row['firstname'];
         }
     }
-
+    //insert into review table
     $rname = $_POST['rname'];
     $review = $_POST['review'];
     $rating = $_POST['rating'];
     $email = $_SESSION['email'];
     $q = "INSERT INTO review VALUES ('$reviewer','$rname','$review','$rating','$fileNameNew','$email')";
     mysqli_query($db,$q);
-    header('location: displayreview.php?reviewsent');
+    header('location: displayreview.php');
 }
 //update profile picture
 if(isset($_POST['updateProfile'])){

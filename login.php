@@ -19,9 +19,7 @@
             </div>
             <ul class="nav navbar-nav">
                 <li class="active"><a href="index.php">Home</a></li>
-                <li><a href="review.php">Reviews</a></li>
-                <li><a href="featured.php">Featured</a></li>
-                <li><a href="events.php">Events</a></li>
+                <li><a href="displayreview.php">Reviews</a></li>
             </ul>
             <ul class="nav navbar-nav navbar-right">
                 <li><a href="register.php"><span class="glyphicon glyphicon-user"></span> Sign up</a></li>
