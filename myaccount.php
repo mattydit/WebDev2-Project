@@ -51,9 +51,7 @@
 
 				    if($resultCheck > 0){
 				        while($row = mysqli_fetch_assoc($result)){
-				        	echo "<div>";
-				        	echo '<img style="width: 200px; height: 200px; float: left; padding-right: 10px;" src="images/profileImage/' . $row["image"].'">';
-				        	echo "</div>";
+				        	echo '<img  style="width: 200px; height: 200px; float: right; padding-right: 10px;" src="images/profileImage/' . $row["image"].'" alt="">';
 				        }
 				    }
 					?>

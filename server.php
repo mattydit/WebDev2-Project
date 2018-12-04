@@ -50,7 +50,7 @@ if (isset($_POST['acc_submit']))
 
         $_SESSION['email'] = $email;
         $_SESSION['success'] = "You are now logged in";
-        //header('location: index.php');
+        header('location: index.php');
     }
 }
 
